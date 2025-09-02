@@ -1,0 +1,4 @@
+este es 
+un archivo
+con varias lineas
+file_get_contents.php
