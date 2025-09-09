@@ -14,6 +14,8 @@
     ];
     foreach ($miembros as $miembro)
     {
+        $tipo = $miembro['tipo'];
+        $antiguedad = $miembro['antiguedad'];
         print($miembro['tipo']);
         
     }
