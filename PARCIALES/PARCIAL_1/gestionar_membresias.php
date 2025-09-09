@@ -14,7 +14,7 @@
     ];
     foreach ($miembros as $miembro)
     {
-        print($miembro);
+        print($miembro['tipo']);
         
     }
 ?>

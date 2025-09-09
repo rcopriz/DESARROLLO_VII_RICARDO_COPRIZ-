@@ -3,20 +3,20 @@
     {
         if($antiguedad_meses < 3)
         {
-            return "no hay promocion";
+            return 0;
         }
 
         if($antiguedad_meses >= 3 && $antiguedad_meses <= 12)
         {
-            return "8%";
+            return 0.08;
         }
         if($antiguedad_meses >= 13 && $antiguedad_meses <= 24)
         {
-            return "12%";
+            return 0.12;
         }
         if($antiguedad_meses >= 24 )
         {
-            return "20%";
+            return 0.2;
         }
     }
 
