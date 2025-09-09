@@ -11,10 +11,10 @@
                 'Carlos López' => ['tipo' => 'vip', 'antiguedad' => 30],
                 'Maria Rodriguez' => ['tipo' => 'familiar', 'antiguedad' => 8],
                 'Luis Martinez' => ['tipo' => 'corporativa', 'antiguedad' => 18]
-                ]
-    foreach ($membresias as $membresia)
+    ];
+    foreach ($miembros as $miembro)
     {
-        print("<br> $membresia");
-
+        print($miembro);
+        
     }
 ?>
