@@ -17,9 +17,9 @@
         $tipo = $miembro['tipo'];
         $antiguedad = $miembro['antiguedad'];
         $costo = $membresias[$tipo];
-        $total = 0;
+        $total = ;
 
-        print("$miembro");
+        print($miembro);
         
     }
 ?>
