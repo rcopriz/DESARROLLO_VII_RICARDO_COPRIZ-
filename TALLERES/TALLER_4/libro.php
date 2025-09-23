@@ -1,5 +1,5 @@
 <?php
-require_once 'Prestable.php'
+require_once 'Prestable.php';
 class Libro implements Prestable{
     private $titulo;
     private $autor;

@@ -1,7 +1,8 @@
 <?php
 require_once 'Libro.php';
 require_once 'LibroDigital.php';
-
+require_once 'Gerente.php';
+require_once 'Desarrollador.php';
 class Biblioteca {
     private $libros = [];
 
