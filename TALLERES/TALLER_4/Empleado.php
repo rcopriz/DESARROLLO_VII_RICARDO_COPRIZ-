@@ -1,5 +1,5 @@
 <?php
-class Empleado {
+class Empleado extends Gerente  {
     private $nombre;
     private $id_empleado;
     private $salario_base;

@@ -4,6 +4,10 @@ include_once "Evaluable.php";
 
 class Gerente extends Empleado implements Evaluable{
     private $departamento;
+    public function __construct()
+    {
+
+    }
     function asignar_bonos($desarrollador, $bono)
     {
         return 0.3;
@@ -13,6 +17,7 @@ class Gerente extends Empleado implements Evaluable{
     {
         echo "<br> estamos evaluando el desempeño del gerente";
     }
+    
 }
 
 ?>
