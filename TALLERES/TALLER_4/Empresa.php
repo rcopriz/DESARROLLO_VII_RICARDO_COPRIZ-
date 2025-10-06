@@ -5,10 +5,10 @@ include_once "Evaluable.php";
 
 class Empresa 
 {
-    #private $id;
-    #private $nombre;
-    #private $salario;
-    #private $departamento;
+    private $id;
+    private $nombre;
+    private $salario;
+    private $departamento;
 
     public function __construct($id,$nombre,$salario,$departamento)
     {
@@ -17,6 +17,7 @@ class Empresa
         $this->salario = $salario;
         $this->departamento = $departamento;
     }
+    
     public function agregarGerente()
     {
         $nuevo_gerente = new Gerente();
