@@ -8,6 +8,15 @@ require_once 'clases.php';
 $gestor = new GestorInventario();
 $notificacion = '';
 $itemParaEditar = null;
+$estadosLegibles=[
+    "disponible" => "Disponible",
+    "agotado"=>"Agotado",
+    "por_recibir"=> "Por recibir"
+];
+
+function estadoLegible($estado, $estadosLegibles){
+    return $estadosLegibles[$estado]?? $estado;
+}
 
 // Capturar parámetros de la URL
 $operacion = $_GET['operacion'] ?? 'listar';
@@ -17,12 +26,14 @@ $filtroEstado = $_GET['estado'] ?? '';
 
 // Procesar las diferentes operaciones
 if ($operacion === 'crear' && !empty($_GET['nombre'])) {
+    $gestor->agregar($_GET);
     $notificacion = "Producto agregado correctamente.";
     
 } elseif ($operacion === 'modificar' && !empty($_GET['id'])) {
     $notificacion = "Producto modificado correctamente.";
     
 } elseif ($operacion === 'eliminar' && !empty($_GET['id'])) {
+    $gestor->eliminar($_GET['id']);
     $notificacion = "Producto eliminado correctamente.";
     
 } elseif ($operacion === 'cambiar_estado' && !empty($_GET['id']) && !empty($_GET['nuevo_estado'])) {
@@ -236,6 +247,9 @@ if ($operacion === 'ordenar') {
                                         Fecha Ingreso <?php echo ($campoOrden == 'fechaIngreso') ? ($tipoOrden == 'asc' ? '▲' : '▼') : ''; ?>
                                     </a>
                                 </th>
+                                <th>
+                                    Informacion de Inventario
+                                </th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -263,12 +277,13 @@ if ($operacion === 'ordenar') {
                                             };
                                             ?>
                                             <span class="badge bg-<?php echo $badgeClass; ?>">
-                                                <?php echo htmlspecialchars($item->estado); ?>
+                                                <?php echo htmlspecialchars(estadoLegible($item->estado, $estadosLegibles)); ?>
                                             </span>
                                         </td>
                                         <td><?php echo htmlspecialchars($item->stock); ?></td>
                                         <td><?php echo htmlspecialchars($item->categoria); ?></td>
                                         <td><?php echo htmlspecialchars($item->fechaIngreso); ?></td>
+                                        <td><?php echo htmlspecialchars($item ->obtenerInformacionInventario()); ?></td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm" role="group">
                                                 <a href="?operacion=editar&id=<?php echo $item->id; ?>" 

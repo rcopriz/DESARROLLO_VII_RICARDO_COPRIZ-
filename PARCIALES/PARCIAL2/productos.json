@@ -28,5 +28,25 @@
         "fechaIngreso": "2024-07-20",
         "categoria": "ropa",
         "talla": "M"
+    },
+    {
+        "id": 4,
+        "nombre": "Samsung Galaxy Z Fold 6",
+        "descripcion": "Celular plegable",
+        "estado": "disponible",
+        "stock": "25",
+        "fechaIngreso": "2025-10-07",
+        "categoria": "electronico",
+        "garantiaMeses": "24"
+    },
+    {
+        "id": 5,
+        "nombre": "Maiz Refinado",
+        "descripcion": "Maiz para cocinar",
+        "estado": "disponible",
+        "stock": "50",
+        "fechaIngreso": "2025-10-07",
+        "categoria": "alimento",
+        "fechaVencimiento": "2026-01-06"
     }
 ]
