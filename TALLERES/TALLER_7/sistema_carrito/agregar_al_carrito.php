@@ -1,22 +1,40 @@
 <?php
 //    function agregar_carrito($id,$descripcion,$precio)
 //    {
-        print("entrando al carrito");
-        if(!isset($_COOKIE['carrito']))
+       # print("entrando al carrito");
+        
+        session_start();
+        echo "<br>";
+       # print_r($_SESSION);
+        echo "<br>";
+       # print_r($_POST);
+        echo "<br>";
+        if(!isset($_SESSION['carrito']))
         {
-            setcookie("carrito","carro",[
-                                    'expires' => time() + 3600*24,
-                                    'path' => '/',
-                                    'domain' => '',
-                                    'secure' => true,
-                                    'httponly' => true,
-                                    'samesite' => 'Strict'
-            ]);
-
+            echo "<script>alert('Ha Ocurrido un error al agregar al Carrito')";
         }
         else
         {
-            echo "si existe la cookie";
+            echo "si existe la sesion";
+            $_SESSION['carrito'][]=['descripcion' => $_POST,'id' => $_POST['id'],'cantidad' => $_POST['cantidad']];
+            echo "<br> " ;
+            print_r($_SESSION['carrito']);
+             echo "<ul>";
+             /*
+    foreach ($_SESSION['carrito'] as $prod => $key)
+    {
+        $descripcion = $key['descripcion'];
+        $precio = $key['precio'];
+        $id = $key['id'];
+        echo "<br>";
+        print("
+                <li>
+                    <div class='descripcion'>$descripcion</div>
+                    <div class='precio'>$precio</div>
+
+                </li>");
+    }
+    echo "</ul>";*/
         }
 //    }
 

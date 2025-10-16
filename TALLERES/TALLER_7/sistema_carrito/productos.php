@@ -5,7 +5,8 @@ include_once 'config_sesion.php';
     #print($_SESSION['ultima_actividad']);
     if (!isset($_SESSION['ultima_actividad']))
     {
-        print("ha ocurrido un error al generar la sesion");
+        echo "<script>alert('Ha Ocurrido un Error al Generar la Sesion')</script>";
+        die();
     }
     $productos = [
          ['descripcion' => 'producto 1', 'precio' => 5.99 , 'id' => 1],
@@ -34,6 +35,8 @@ include_once 'config_sesion.php';
     
     #print_r($productos);
     echo "<ul>";
+    
+        print_r($_SESSION);
     foreach ($productos as $prod => $key)
     {
         $descripcion = $key['descripcion'];
@@ -44,10 +47,11 @@ include_once 'config_sesion.php';
                 <li>
                     <div class='descripcion'>$descripcion</div>
                     <div class='descripcion'>$precio</div>
-                    <form action='agregar_al_carrito.php' >
-                        <input id='descripcion' type='hidden' value='$descripcion'>
-                        <input id='id' type='hidden' value='$id'>
-                        <input id='precio' type='hidden' value='$precio'>
+                    <form action='agregar_al_carrito.php' method='post'>
+                        <input name='descripcion' type='hidden' value='$descripcion'/>
+                        <input name='id' type='hidden' value='$id'/>
+                        <input name='precio' type='hidden' value='$precio'/>
+                        <input name='cantidad' type='number'/>
                         <button onclick='agregar_al_carrito.php'> agregar al carrito </button>
                     </form>
                 </li>");
