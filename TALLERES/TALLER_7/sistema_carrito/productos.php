@@ -35,8 +35,6 @@ include_once 'config_sesion.php';
     
     #print_r($productos);
     echo "<ul>";
-    
-        print_r($_SESSION);
     foreach ($productos as $prod => $key)
     {
         $descripcion = $key['descripcion'];

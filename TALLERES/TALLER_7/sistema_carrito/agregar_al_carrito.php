@@ -11,7 +11,8 @@
         echo "<br>";
         if(!isset($_SESSION['carrito']))
         {
-            echo "<script>alert('Ha Ocurrido un error al agregar al Carrito')";
+            echo "<script>alert('Error Generando Carrito de Compras...')</script>";
+            #$_SESSION['carrito'][]=['descripcion' => $_POST,'id' => $_POST['id'],'cantidad' => $_POST['cantidad']];
         }
         else
         {
@@ -23,20 +24,20 @@
             /*
              echo "<ul>";
 
-    foreach ($_SESSION['carrito'] as $prod => $key)
-    {
-        $descripcion = $key['descripcion'];
-        $precio = $key['precio'];
-        $id = $key['id'];
-        echo "<br>";
-        print("
-                <li>
-                    <div class='descripcion'>$descripcion</div>
-                    <div class='precio'>$precio</div>
+            foreach ($_SESSION['carrito'] as $prod => $key)
+            {
+                $descripcion = $key['descripcion'];
+                $precio = $key['precio'];
+                $id = $key['id'];
+                echo "<br>";
+                print("
+                        <li>
+                            <div class='descripcion'>$descripcion</div>
+                            <div class='precio'>$precio</div>
 
-                </li>");
-    }
-    echo "</ul>";*/
+                        </li>");
+            }
+            echo "</ul>";*/
         }
 //    }
 
