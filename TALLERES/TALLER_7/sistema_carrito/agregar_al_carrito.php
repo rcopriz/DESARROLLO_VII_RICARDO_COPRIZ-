@@ -19,8 +19,10 @@
             $_SESSION['carrito'][]=['descripcion' => $_POST,'id' => $_POST['id'],'cantidad' => $_POST['cantidad']];
             echo "<br> " ;
             print_r($_SESSION['carrito']);
+            
+            /*
              echo "<ul>";
-             /*
+
     foreach ($_SESSION['carrito'] as $prod => $key)
     {
         $descripcion = $key['descripcion'];
