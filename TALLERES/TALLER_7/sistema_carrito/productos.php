@@ -50,7 +50,8 @@ include_once 'config_sesion.php';
                         <input name='id' type='hidden' value='$id'/>
                         <input name='precio' type='hidden' value='$precio'/>
                         <input name='cantidad' type='number'/>
-                        <button onclick='agregar_al_carrito.php'> agregar al carrito </button>
+                        <input onclick='agregar_al_carrito.php' type='submit'
+                         agregar al carrito />
                     </form>
                 </li>");
     }
