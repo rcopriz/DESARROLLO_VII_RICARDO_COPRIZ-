@@ -10,7 +10,7 @@ if($stmt = $pdo->prepare($sql)){
         
         $stmt->bindParam(":filtro", $filtro, PDO::PARAM_STR);
         $filtro = $_POST['filtro'];
-        if($stmt->execute()){
+        if($stmt->execute(['filtro' => "%$filtro%"])){
             if($stmt->rowCount() > 0){
             
                 while($row = $stmt->fetch()){
