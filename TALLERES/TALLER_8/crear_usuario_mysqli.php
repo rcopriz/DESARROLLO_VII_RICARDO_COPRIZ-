@@ -27,4 +27,4 @@ mysqli_close($conn);
     <div><label>Nombre</label><input type="text" name="nombre" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <input type="submit" value="Crear Usuario">
-</form>
+</form> 
