@@ -50,14 +50,16 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $anio_publicacion = $_GET['anio_publicacion'];
     $cantidad_disponible = $_GET['cantidad_disponible'];
     $autor = $_GET['autor'];
-    echo $id . " " . $titulo . " " . $isbn;
+    #echo $id . " " . $titulo . " " . $isbn;
     ?>
 
     <!DOCTYPE html>
     <html lang="es">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
         <title>CRUD de Libros</title>
         <style>
             /* Estilos básicos para mejor visualización */
@@ -77,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         <h1>Gestión de Libros (CRUD)</h1>
 
         <section id="formulario-libros">
-            <h2>Añadir/Editar Libro</h2>
+            <h2>Editar Libro</h2>
             <form action="editar_libro.php" method="POST">
                 
                 <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
@@ -108,7 +110,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
                 </div>
 
                 <button type="submit">Guardar Libro</button>
-                <button type="reset">Limpiar Formulario</button>
             </form>
         </section>
     <?php

@@ -1,0 +1,124 @@
+ body {
+    background: #f4f6f8;
+    color: #333;
+    font-family: "Inter", Arial, sans-serif;
+    margin: 0;
+  }
+
+  header {
+    background: #2563eb;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 1100px;
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: #2563eb;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 0.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  textarea,
+  select {
+    flex: 1 1 60%;
+    min-width: 500px; /* 3x más ancho visualmente */
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+  }
+
+  button {
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    padding: 0.35rem 0.6rem; /* mitad del tamaño original */
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 0.9rem;
+  }
+
+  button:hover {
+    background: #1d4ed8;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+  }
+
+  th {
+    background: #f1f5f9;
+    color: #1e3a8a;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background: #8ec7ff;
+  }
+
+  .acciones button {
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    textarea,
+    select {
+      min-width: 100%;
+    }
+  }
