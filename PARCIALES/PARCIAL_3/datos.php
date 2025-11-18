@@ -1,8 +1,8 @@
 <?php
     $array_notas = [
-        "estudiante" => [85, 90, 78],
-        "estudiante2" => [88, 76, 92],
-        "estudiante3" => [90, 91, 89]
+        "estudiante" => [85, 90, 78,100,100],
+        "estudiante2" => [88, 76, 92,33,100],
+        "estudiante3" => [90, 91, 89,0,0]
     ];
 
     
