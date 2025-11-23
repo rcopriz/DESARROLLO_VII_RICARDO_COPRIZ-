@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>ToDo List App</h1>
+        <h1>Lista de Actividades Para Mantenimiento de Equipos Estacionarios</h1>
     </header>
     <main>
         <?php echo $content; ?>
     </main>
     <footer>
-        <p>&copy; 2024 ToDo List App</p>
+        <p>&copy; Lista de Actividades Para Mantenimiento de Equipos Estacionarios</p>
     </footer>
     <script src="<?php echo BASE_URL; ?>/public/assets/js/main.js"></script>
 </body>

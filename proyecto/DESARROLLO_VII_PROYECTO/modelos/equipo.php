@@ -11,7 +11,7 @@ class Equipo {
         $this->pdo = $pdo;
     }
 
-    public function all() {
+    public function getAll() {
         $stmt = $this->pdo->query("
             SELECT e.*, m.id AS mantenimiento_id, a.descripcion AS actividad
             FROM equipos e  
@@ -21,24 +21,24 @@ class Equipo {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function find($id) {
+    public function findById($id) {
         $stmt = $this->pdo->prepare("SELECT * FROM equipos WHERE id = ?");  
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function create($descripcion, $actividadMantenimiento) {
+    public function createEquipo($descripcion, $actividadMantenimiento) {
         $stmt = $this->pdo->prepare("INSERT INTO equipos (descripcion, actividadMantenimiento) VALUES (?, ?)");
         $stmt->execute([$descripcion, $actividadMantenimiento]);
         return $this->pdo->lastInsertId();
     }
 
-    public function update($id, $descripcion, $actividadMantenimiento) {
+    public function updateEquipo($id, $descripcion, $actividadMantenimiento) {
         $stmt = $this->pdo->prepare("UPDATE equipos SET descripcion = ?, actividadMantenimiento = ? WHERE id = ?");
         return $stmt->execute([$descripcion, $actividadMantenimiento, $id]);
     }
 
-    public function delete($id) {
+    public function deleteEquipo($id) {
         $stmt = $this->pdo->prepare("DELETE FROM equipos WHERE id = ?");
         return $stmt->execute([$id]);
     }
