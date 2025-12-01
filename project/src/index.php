@@ -7,15 +7,15 @@ error_reporting(E_ALL);
 // Define the base path for includes
 define('BASE_PATH', __DIR__ . '/');
 // Include the configuration file
-require_once BASE_PATH . '../../config.php';
+require_once BASE_PATH . '../config.php';
 
 //incluir los archivos necesarios de la base de datos y la gestion de maquinas
-include '../../modelos/database.php';
-include '../../modelos/actividad.php';
-include '../../modelos/equipo.php';
-include '../../modelos/usuario.php';    
-include '../../modelos/rol.php';
-include '../../modelos/mantenimiento.php'; 
+include '../modelos/database.php';
+include '../modelos/actividad.php';
+include '../modelos/equipo.php';
+include '../modelos/usuario.php';    
+include '../modelos/rol.php';
+include '../modelos/mantenimiento.php'; 
 
 // Get the action from the URL, default to 'list' if not set
 $action = $_GET['action'] ?? 'list';
@@ -42,7 +42,8 @@ switch ($action) {
         break;
     default:
         $actividades = $actividadManager->all_actividad();
-        require BASE_PATH . 'listaActividades.php';
+        //echo BASE_PATH;
+        require BASE_PATH . '../views/vistaListarActividades.php';
         break;
 }
 ?>
