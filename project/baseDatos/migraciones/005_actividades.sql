@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS actividades (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    descripcion VARCHAR(255) UNIQUE
-);
