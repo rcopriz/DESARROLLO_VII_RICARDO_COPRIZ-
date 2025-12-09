@@ -25,7 +25,7 @@ function loadEnv($path) {
 }
 
 // Load environment variables
-loadEnv('.env');
+loadEnv('../.env');
 
 // Define constants using environment variables
 define('BASE_URL', getenv('BASE_URL'));
