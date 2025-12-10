@@ -217,3 +217,33 @@ async function listAllActividades() {
         tableBody.innerHTML = `<tr class="text-center"><td colspan="9">Error al cargar los datos: ${error.message}</td></tr>`;     
     }   
 }
+
+async function viewMantenimientosProgramados() {
+    try {
+        const res = await fetch('backend/api/viewMantenimientosProgramados.php');  
+        if (!res.ok) {
+            throw new Error(`Error HTTP: ${res.status}`);
+        }
+        const mantenimientos = await res.json();
+        console.log(mantenimientos);
+// llena la tabla con los mantenimientos programados
+        const tableBody = document.querySelector('.table-sm tbody');
+        tableBody.innerHTML = '';
+        mantenimientos.forEach((mantenimiento) => {
+            const row = document.createElement('tr');   
+            row.className = 'text-center';
+            row.innerHTML = `
+                <td>${mantenimiento.ID_TAREA}</td>
+                <td>${mantenimiento.ID_EQUIPO}</td>
+                <td>${mantenimiento.TAREA}</td>
+                <td>${mantenimiento.INTERVALO_HORAS_MAQUINA}</td>
+                <td>${mantenimiento.CANT_HORAS}</td>
+                <td>${mantenimiento.HORAS_RESTANTES_MANTENIMIENTO}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error('Error al cargar los mantenimientos programados:', error);
+    }
+}

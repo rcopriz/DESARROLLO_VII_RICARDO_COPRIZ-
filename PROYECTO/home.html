@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>List admin</title>
+	<title>List products</title>
 
 	<!-- Normalize V8.0.1 -->
 	<link rel="stylesheet" href="./css/normalize.css">
@@ -29,6 +29,9 @@
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
 
+	<!-- Scripts Del Proyecto By rcopriz-->
+	<script src="./js/proyectoActividades.js" ></script>
+
 
 </head>
 <body>
@@ -43,7 +46,7 @@
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-						Ricardo Copriz <br><small class="roboto-condensed-light">Web Developer</small>
+						Ricardo Copriz 1LS231 <br><small class="roboto-condensed-light">Web Developer</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -84,105 +87,32 @@
 				<a href="#" class="btn-exit-system"><i class="fas fa-power-off"></i></a>
 			</nav>
 
-			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fas fa-users fa-fw"></i> &nbsp; LIST ADMIN
-				</h3>
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
-				</p>
+
+			<div class="full-box page-header" style="width: 98%; height: 10%;">
+				<h6 class="text-left">
+					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Actividad
+				</h6>
+				<div class="container-fluid"  style="width: 100%; height: 10%;">
+					<p class="text-justify">
+						Reporte de las actividades de mantenimiento programadas para las máquinas. Aquí puedes ver y gestionar las tareas asignadas a cada equipo, incluyendo detalles como el intervalo de horas, fechas de mantenimiento y técnicos asignados.
+					</p>
+			</div>	
 			</div>
-			
-			<div class="container-fluid">
-				<ul class="full-box list-unstyled page-nav-tabs">
-					<li>
-						<a href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; NEW ADMIN</a>
-					</li>
-					<li>
-						<a class="active" href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; LIST ADMIN</a>
-					</li>
-				</ul>	
-			</div>
-			
-			<!-- Content -->
 			<div class="container-fluid">
 				<div class="table-responsive">
 					<table class="table table-dark table-sm">
 						<thead>
 							<tr class="text-center roboto-medium">
-								<th>#</th>
-								<th>NAME</th>
-								<th>LAST NAME</th>
-								<th>UPDATE</th>
-								<th>DELETE</th>
+								<th># Tarea</th>
+								<th>ID de la maquina</th>
+								<th>Tarea</th>
+								<th>Intervalo de horas maquina</th>
+								<th>Horas Siguiente Mantenimiento</th>
+								<th>Horas Restantes</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="text-center" >
-								<td>1</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>2</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>3</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>4</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
+							<script>viewMantenimientosProgramados();</script>
 						</tbody>
 					</table>
 				</div>

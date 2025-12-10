@@ -50,3 +50,4 @@ class EquiposManager {
         return $stmt->execute();
     }
 }
+
