@@ -29,4 +29,18 @@ class EquiposManager {
         $stmt->bindParam(':horas_maquina', $data['HORAS_MAQUINA'], PDO::PARAM_INT);
         return $stmt->execute();
     }
+    public function updateEquipo($id, $data) {
+        $stmt = $this->pdo->prepare("UPDATE EQUIPO SET NOMBRE = :nombre, MODELO = :modelo, ANO_FABRICACION = :ano_fabricacion, HORAS_MAQUINA = :horas_maquina WHERE ID_EQUIPO = :id");
+        $stmt->bindParam(':nombre', $data['NOMBRE']);
+        $stmt->bindParam(':modelo', $data['MODELO']);
+        $stmt->bindParam(':ano_fabricacion', $data['ANO_FABRICACION'], PDO::PARAM_INT);
+        $stmt->bindParam(':horas_maquina', $data['HORAS_MAQUINA'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    public function deleteEquipo($id) {
+        $stmt = $this->pdo->prepare("DELETE FROM EQUIPO WHERE ID_EQUIPO = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }

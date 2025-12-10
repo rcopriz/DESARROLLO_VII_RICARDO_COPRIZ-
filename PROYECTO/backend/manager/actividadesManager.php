@@ -37,5 +37,11 @@ class Actividades {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+    public function getActividadById($id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM ACTIVIDAD_POR_EQUIPO WHERE ID_ACTIVIDAD = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 }
