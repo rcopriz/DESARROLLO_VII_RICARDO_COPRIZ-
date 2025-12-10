@@ -24,11 +24,13 @@ class Actividades {
         $stmt->bindParam(':duracion_horas', $data['DURACION_HORAS'], PDO::PARAM_INT);
         return $stmt->execute();
     }
+
     public function deleteActividad($id) {
         $stmt = $this->pdo->prepare("DELETE FROM ACTIVIDAD_POR_EQUIPO WHERE ID_ACTIVIDAD = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
     public function updateActividad($id, $data) {
         $stmt = $this->pdo->prepare("UPDATE ACTIVIDAD_POR_EQUIPO SET DESCRIPCION = :descripcion, FECHA_ACTIVIDAD = :fecha_actividad, DURACION_HORAS = :duracion_horas WHERE ID_ACTIVIDAD = :id");
         $stmt->bindParam(':descripcion', $data['DESCRIPCION']);
@@ -37,6 +39,7 @@ class Actividades {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+    
     public function getActividadById($id) {
         $stmt = $this->pdo->prepare("SELECT * FROM ACTIVIDAD_POR_EQUIPO WHERE ID_ACTIVIDAD = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
