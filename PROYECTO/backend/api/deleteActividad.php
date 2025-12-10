@@ -1,7 +1,8 @@
 <?php
 include_once '../manager/actividadesManager.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
+    //$data = json_decode(file_get_contents('php://input'), true);
+    $data = $_POST;
     if (isset($data['id_actividad'])) {
         $actividadesManager = new Actividades();
         $result = $actividadesManager->deleteActividad($data['id_actividad']);

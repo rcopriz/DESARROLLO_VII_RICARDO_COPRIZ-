@@ -1,7 +1,8 @@
 <?php
 include_once '../manager/actividadesManager.php';
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
+    //$input = $_GET;
     if (isset($input['id_equipo'])) {
         
         $equipoId = $input['id_equipo'];

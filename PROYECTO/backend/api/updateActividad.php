@@ -3,9 +3,19 @@ include_once '../manager/actividadesManager.php';
 //actualizar una actividad por id
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
-    if (isset($data['id_actividad'], $data['tarea'], $data['intervalo_horas_maquina'], $data['fecha_ult_mant'], $data['cant_horas'], $data['horas_sig_mantenimiento'], $data['fecha_sig_mantenimiento'], $data['ultimo_tecnico'], $data['sig_tecnico_asign'])) {
+    //print_r($data);
+    $id_tarea = $data['id_tarea'];
+    $id_equipo = $data['id_equipo'];
+    $tarea = $data['tarea'];
+    $intervalo_horas_maquina = $data['intervalo_horas_maquina'];
+    $fecha_ult_mant = $data['fecha_ult_mant'];
+    $cant_horas = $data['cant_horas'];
+    $horas_sig_mantenimiento = $data['horas_sig_mant'];
+    $ultimo_tecnico = $data['ult_tecnico_asig'];
+    $fecha_sig_mantenimiento = $data['fecha_sig_mant'];
+    if (isset($id_tarea, $id_equipo, $tarea, $intervalo_horas_maquina, $fecha_ult_mant, $cant_horas, $horas_sig_mantenimiento, $fecha_sig_mantenimiento)) {
         $actividadesManager = new Actividades();
-        $result = $actividadesManager->updateActividad($data['id_actividad'], $data);
+        $result = $actividadesManager->updateActividad($data);
         
         if ($result) {
             http_response_code(200);

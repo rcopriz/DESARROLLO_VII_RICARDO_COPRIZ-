@@ -1,6 +1,7 @@
 //actualizar una maquina
 async function enviarFormularioUpdateMaquina() {
-    const form = document.querySelector('form');
+    //const form = document.querySelector('form');
+    const form = document.getElementById('actualizar');
     const formData = new FormData(form);
     let res = await fetch('backend/api/updateEquipo.php', {
         method: 'POST',
@@ -19,7 +20,7 @@ async function enviarFormularioUpdateMaquina() {
 //crear una nueva maquina
 async function enviarFormularioCreateMaquina() {
 
-    const form = document.querySelector('form');
+    const form = document.getElementById('actualizar');
     const formData = new FormData(form);
 
     let res = await fetch('backend/api/createEquipos.php', {

@@ -5,8 +5,8 @@ include_once '../manager/actividadesManager.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
     //print_r($data);
-    if (isset($data['id_equipo'], $data['tarea'],$data['intervalo'], $data['fecha_ult_mant'], $data['cant_horas'],
-     $data['horas_sig_mantenimiento'], $data['fecha_sig_mantenimiento'], $data['ultimo_tecnico'], $data['sig_tecnico_asign'])) {
+    if (isset($data['id_equipo'], $data['tarea'],$data['intervalo_horas_maquina'], $data['fecha_ult_mant'], $data['cant_horas'],
+     $data['horas_sig_mant'])) {
         $actividadesManager = new Actividades();
         $result = $actividadesManager->createActividad($data);
         if ($result) {

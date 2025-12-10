@@ -2,8 +2,6 @@
 include_once '../database/database.php';
 class Actividades {
     private $pdo;
-
-
     public function __construct() {
         $pdo_tmp = new Database();
         $this->pdo = $pdo_tmp->getConnection();
@@ -41,6 +39,7 @@ class Actividades {
     }
 
     public function updateActividad($data) {
+       
         $stmt = $this->pdo->prepare("UPDATE TAREAS_EQUIPO SET TAREA = :tarea, 
         INTERVALO_HORAS_MAQUINA = :intervalo_horas_maquina, FECHA_ULT_MANT = :fecha_ult_mant, 
         CANT_HORAS = :cant_horas, 
@@ -51,11 +50,12 @@ class Actividades {
         $stmt->bindParam(':intervalo_horas_maquina', $data['intervalo_horas_maquina'], PDO::PARAM_INT);
         $stmt->bindParam(':fecha_ult_mant', $data['fecha_ult_mant']);
         $stmt->bindParam(':cant_horas', $data['cant_horas'], PDO::PARAM_INT);
-        $stmt->bindParam(':horas_sig_mantenimiento', $data['horas_sig_mantenimiento'], PDO::PARAM_INT);
-        $stmt->bindParam(':fecha_sig_mantenimiento', $data['fecha_sig_mantenimiento']);
-        $stmt->bindParam(':ultimo_tecnico', $data['ULTIMO_TECNICO']);
-        $stmt->bindParam(':sig_tecnico_asign', $data['SIG_TECNICO_ASIGN']);
-        $stmt->bindParam(':id', $fata['id'], PDO::PARAM_INT);
+        $stmt->bindParam(':horas_sig_mantenimiento', $data['horas_sig_mant'], PDO::PARAM_INT);
+        $stmt->bindParam(':fecha_sig_mantenimiento', $data['fecha_sig_mant']);
+        $stmt->bindParam(':ultimo_tecnico', $data['ult_tecnico_asig']);
+        $stmt->bindParam(':sig_tecnico_asign', $data['sig_tecnico_asign']);
+        $stmt->bindParam(':id', $data['id_tarea'], PDO::PARAM_INT);
+        
         return $stmt->execute();
     }
     
