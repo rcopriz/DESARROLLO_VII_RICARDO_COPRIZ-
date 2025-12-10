@@ -40,11 +40,8 @@ async function enviarFormularioCreateActividad() {
 async function listAllActividadesByEquipo() {
     const tableBody = document.querySelector('.table-sm tbody');
     let id_equipo = document.getElementsByName('id_equipo')[0].value;
-
-    //parametro id_equipo de la url
     const urlParams = new URLSearchParams(window.location.search);
     id_equipo = urlParams.get('id_equipo');
-    //alert("ID del equipo: " + id_equipo); // Para depuración
     tableBody.innerHTML = ''; 
 
     try {
@@ -63,13 +60,11 @@ async function listAllActividadesByEquipo() {
 
         const actividades = await res.json();
         console.log(JSON.stringify(actividades)); 
-        // Verificar si la respuesta es un array y tiene datos
         if (Array.isArray(actividades) && actividades.length > 0) {
             actividades.forEach((actividad, index) => {
                 const row = document.createElement('tr');
                 row.className = 'text-center';
                 
-                // Mapeo seguro de las propiedades del objeto a las celdas de la tabla
                 row.innerHTML = `
                     <td>${actividad.ID_TAREA}</td>
                     <td>${actividad.ID_EQUIPO}</td>
@@ -126,7 +121,6 @@ async function deleteActividad(id_tarea) {
     //alert("Eliminar equipo con ID: " + equipoId); // Para depuración
     try {
         const url = 'backend/api/deleteActividad.php'; 
-        // Usamos FormData para enviar el ID como si fuera un formulario POST
         const formData = new FormData();
         formData.append('id_actividad', id_tarea);
         const res = await fetch(url, {
@@ -138,10 +132,8 @@ async function deleteActividad(id_tarea) {
 
         if (res.ok) {
             Swal.fire('¡Eliminado!', respuesta.message || 'La actividad ha sido eliminada.', 'success');
-            // Recargar la lista después de la eliminación exitosa
             listAllActividades(); 
         } else {
-            // Error del servidor (ej. 500)
             const errorMessage = respuesta.message || 'Error desconocido al eliminar.';
             Swal.fire('Error', errorMessage, 'error');
         }
@@ -226,7 +218,6 @@ async function viewMantenimientosProgramados() {
         }
         const mantenimientos = await res.json();
         console.log(mantenimientos);
-// llena la tabla con los mantenimientos programados
         const tableBody = document.querySelector('.table-sm tbody');
         tableBody.innerHTML = '';
         mantenimientos.forEach((mantenimiento) => {

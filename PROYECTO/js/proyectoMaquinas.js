@@ -1,6 +1,5 @@
 //actualizar una maquina
 async function enviarFormularioUpdateMaquina() {
-    //const form = document.querySelector('form');
     const form = document.getElementById('actualizar');
     const formData = new FormData(form);
     let res = await fetch('backend/api/updateEquipo.php', {
@@ -38,12 +37,9 @@ async function enviarFormularioCreateMaquina() {
 
 }
 
-/**
- * Función para obtener y mostrar todos los equipos en la tabla.
- */
+
 async function listAllEquipos() {
     const tableBody = document.querySelector('.table-sm tbody');
-    // Limpiar el contenido anterior de la tabla
     tableBody.innerHTML = ''; 
 
     try {
@@ -61,8 +57,6 @@ async function listAllEquipos() {
             equipos.forEach((equipo, index) => {
                 const row = document.createElement('tr');
                 row.className = 'text-center';
-                
-                // Mapeo seguro de las propiedades del objeto a las celdas de la tabla
                 row.innerHTML = `
                     <td>${equipo.ID_EQUIPO}</td>
                     <td>${equipo.DESCRIPCION || 'N/A'}</td>
@@ -102,15 +96,11 @@ function confirmDeleteEquipo(equipoId) {
     deleteEquipo(equipoId);
 }
 
-/**
- * Llama a la API para eliminar el equipo y actualiza la tabla.
- * @param {number} equipoId - El ID del equipo a eliminar.
- */
+
 async function deleteEquipo(equipoId) {
-    alert("Eliminar equipo con ID: " + equipoId); // Para depuración
+    alert("Eliminar equipo con ID: " + equipoId); 
     try {
         const url = 'backend/api/deleteEquipo.php';
-        // Usamos FormData para enviar el ID como si fuera un formulario POST
         const formData = new FormData();
         formData.append('id_equipo', equipoId);
 
@@ -123,10 +113,8 @@ async function deleteEquipo(equipoId) {
 
         if (res.ok) {
             Swal.fire('¡Eliminado!', respuesta.message || 'El equipo ha sido eliminado.', 'success');
-            // Recargar la lista después de la eliminación exitosa
             listAllEquipos(); 
         } else {
-            // Error del servidor (ej. 500)
             const errorMessage = respuesta.message || 'Error desconocido al eliminar.';
             Swal.fire('Error', errorMessage, 'error');
         }
@@ -137,13 +125,10 @@ async function deleteEquipo(equipoId) {
     }
 }
 
-/**
- * actualiza el equipo con los datos del formulario
- */
+
 
 function mostrarFormActualiza(id_equipo, descripcion, ubicacion, marca, modelo, ano_fabricacion, horas_maquina) {
     //alert("Mostrar formulario para actualizar el equipo con ID: " + id_equipo);
-    // Aquí puedes implementar la lógica para mostrar el formulario de actualización
     document.getElementsByName('id_equipo')[0].value = id_equipo;
     document.getElementsByName('descripcion')[0].value = descripcion;
     document.getElementsByName('ubicacion')[0].value = ubicacion;
