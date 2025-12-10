@@ -1,25 +1,26 @@
 <?php
-include_once  '../manager/equiposManager.php';
+include_once '../manager/equiposManager.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
+    $data = $_POST;
+    if (isset($data['descripcion'], $data['ubicacion'], $data['marca'], $data['modelo'], $data['ano_fabricacion'], $data['horas_maquina'])) {
 
-    if (isset($data['NOMBRE'], $data['MODELO'], $data['ANO_FABRICACION'], $data['HORAS_MAQUINA'])) {
         $equiposManager = new EquiposManager();
         $result = $equiposManager->createEquipo($data);
 
         if ($result) {
-            http_response_code(201);
+            http_response_code(200);
             echo json_encode(['message' => 'Equipo creado exitosamente']);
         } else {
             http_response_code(500);
             echo json_encode(['message' => 'Error al crear el equipo']);
         }
     } else {
-        http_response_code(400);
+        http_response_code(500);
         echo json_encode(['message' => 'Datos incompletos para crear el equipo']);
     }
 } else {
-    http_response_code(405);
+    http_response_code(500);
     echo json_encode(['message' => 'Método no permitido']);
 }
+?>

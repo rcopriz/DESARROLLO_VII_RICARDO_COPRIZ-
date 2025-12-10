@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>New admin</title>
+	<title>List products</title>
 
 	<!-- Normalize V8.0.1 -->
 	<link rel="stylesheet" href="./css/normalize.css">
@@ -28,6 +28,9 @@
 	
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Scripts Del Proyecto By rcopriz-->
+	<script src="./js/proyectoMaquinas.js" ></script>
 
 
 </head>
@@ -62,10 +65,10 @@
 						</li>
 
 						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Products <i class="fas fa-chevron-down"></i></a>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Maquinas <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; New product</a></li>
-								<li><a href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; List products</a></li>
+								<li><a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva maquinas</a></li>
+								<li><a href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
 							</ul>
 						</li>
 
@@ -88,111 +91,113 @@
 			</nav>
 
 			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fas fa-user-plus fa-fw"></i> &nbsp; NEW ADMIN
-				</h3>
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
-				</p>
+			<div class="full-box page-header" style="width: 98%; height: 10%;">
+				<h6 class="text-left">
+					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Maquina
+				</h6>
+				<div class="container-fluid"  style="width: 100%; height: 10%;">
+				<form  class="form-neon" style="width: 100%; height: 10%;">
+					<fieldset>
+						<input type="hidden" id="id_equipo" name="id_equipo">
+						<h8><i class="fas fa-box-open"></i> &nbsp; Información de la Maquina</h8>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="descripcion" class="bmd-label-floating">Descripcion</label>
+										<input type="text"  class="form-control" id="descripcion" name="descripcion" maxlength="25" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="ubicacion" class="bmd-label-floating">Ubicación</label>
+										<input type="text" class="form-control" id="ubicacion" name="ubicacion" maxlength="30">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="marca" class="bmd-label-floating">Marca</label>
+										<input type="text" class="form-control" id="marca" name="marca" maxlength="25">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="modelo" class="bmd-label-floating">Modelo</label>
+										<input type="text" class="form-control" id="modelo" name="modelo" maxlength="20">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="ano_fabricacion" class="bmd-label-floating">Año de Fabricación</label>
+										<input type="number" class="form-control" id="ano_fabricacion" name="ano_fabricacion" maxlength="15" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="horas_maquina" class="bmd-label-floating">Horas de Máquina</label>
+										<input type="number" class="form-control" id="horas_maquina" name="horas_maquina" maxlength="15" required>
+									</div>	
+							</div>
+						</div>
+					</fieldset>
+
+					
+					<p class="text-center" style="margin-top: 40px;">
+						<button type="reset" class="btn btn-info"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+						&nbsp; &nbsp;
+						<button type="button" class="btn btn-success" onclick="enviarFormularioUpdateMaquina()"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+					</p>
+				</form>
+			</div>	
 			</div>
-			
+
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs">
 					<li>
-						<a class="active" href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; NEW ADMIN</a>
+						<a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
 					</li>
 					<li>
-						<a href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; LIST ADMIN</a>
+						<a class="active" href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a>
 					</li>
 				</ul>	
 			</div>
 			
-			<!-- Content -->
+			<!-- Content here-->
 			<div class="container-fluid">
-				<form action="" class="form-neon" autocomplete="off">
-					<fieldset>
-						<legend><i class="far fa-address-card"></i> &nbsp; Personal information</legend>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-12">
-									<div class="form-group">
-										<label for="AdminDNI" class="bmd-label-floating">DNI</label>
-										<input type="text" pattern="[0-9]{1,20}" class="form-control" id="AdminDNI" maxlength="20">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="AdminName" class="bmd-label-floating">Name</label>
-										<input type="text" pattern="[a-zA-z ]{1,25}" class="form-control" id="AdminName" maxlength="25">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="AdminLastName" class="bmd-label-floating">Last Name</label>
-										<input type="text" pattern="[a-zA-z ]{1,25}" class="form-control" id="AdminLastName" maxlength="25">
-									</div>
-								</div>
-								<div class="col-12">
-									<div style="padding: 20px 0 5px 0; color: #004f45; ">Gender</div>
-									<div class="form-group">
-										<div class="radio">
-											<label>
-												<input type="radio" name="AdminGender" value="Male" checked>
-												<i class="fas fa-male fa-fw"></i> &nbsp; Male
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="AdminGender" id="optionsRadios2" value="Female">
-												<i class="fas fa-female fa-fw"></i> &nbsp; Female
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<br><br><br>
-					<fieldset>
-						<legend><i class="fas fa-user-lock"></i> &nbsp; Account information</legend>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="UserName" class="bmd-label-floating">User name</label>
-										<input type="text" pattern="[a-zA-Z]{1,15}" class="form-control" id="UserName" maxlength="15">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="Email" class="bmd-label-floating">Email</label>
-										<input type="email" class="form-control" id="Email" maxlength="50">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="Password1" class="bmd-label-floating">Password</label>
-										<input type="password" class="form-control" id="Password1" maxlength="50">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="Password2" class="bmd-label-floating">Repeat password</label>
-										<input type="password" class="form-control" id="Password2" maxlength="50">
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<p class="text-center" style="margin-top: 40px;">
-						<button type="reset" class="btn btn-info"><i class="fas fa-paint-roller"></i> &nbsp; CLEAR</button>
-						&nbsp; &nbsp;
-						<button type="submit" class="btn btn-success"><i class="far fa-save"></i> &nbsp; SAVE</button>
-					</p>
-				</form>
+				<div class="table-responsive">
+					<table class="table table-dark table-sm">
+						<thead>
+							<tr class="text-center roboto-medium">
+								<th>#</th>
+								<th>Descripción</th>
+								<th>Ubicación</th>
+								<th>Marca</th>
+								<th>Modelo</th>
+								<th>Año de Fabricacion</th>
+								<th>Horas de Máquina</th>
+								<th>Actualizar</th>
+								<th>Eliminar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<script>listAllEquipos();</script>
+						</tbody>
+					</table>
+				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item disabled">
+							<a class="page-link" href="#" tabindex="-1">Previous</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item">
+							<a class="page-link" href="#">Next</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-			
 
 		</section>
 

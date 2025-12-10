@@ -2,13 +2,12 @@
 include_once  '../manager/equiposManager.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
-
-    if (isset($data['NOMBRE'], $data['MODELO'], $data['ANO_FABRICACION'], $data['HORAS_MAQUINA'])) {
+    $data = $_POST;
+    if (isset($data['descripcion'], $data['ubicacion'], $data['marca'], $data['modelo'], $data['ano_fabricacion'], $data['horas_maquina'], $data['id_equipo'])) {
         $equiposManager = new EquiposManager();
-        $result = $equiposManager->createEquipo($data);
+        $res = $equiposManager->updateEquipo($data);
 
-        if ($result) {
+        if ($res) {
             http_response_code(200);
             echo json_encode(['message' => 'Equipo actualizado exitosamente']);
         } else {
