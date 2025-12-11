@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>List admin</title>
+	<title>List products</title>
 
 	<!-- Normalize V8.0.1 -->
 	<link rel="stylesheet" href="./css/normalize.css">
@@ -29,6 +29,9 @@
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
 
+	<!-- Scripts Del Proyecto By rcopriz-->
+	<script src="./js/proyectoMaquinas.js" ></script>
+
 
 </head>
 <body>
@@ -43,30 +46,30 @@
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-						Ricardo Copriz <br><small class="roboto-condensed-light">Web Developer</small>
+						Ricardo Copriz 1LS231 <br><small class="roboto-condensed-light">Web Developer</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="home.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="home.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<!--
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-tie fa-fw"></i> &nbsp; Administrator <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
-								<li><a href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
+								<li><a href="admin.php"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
+								<li><a href="listadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
 							</ul>
 						</li>
 						-->
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Maquinas <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
-								<li><a href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
-								<li><a href="actividades.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
+								<li><a href="maquinas.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
+								<li><a href="maquinasList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
+								<li><a href="actividades.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
 							</ul>
 						</li>
 
@@ -85,104 +88,96 @@
 			</nav>
 
 			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fas fa-users fa-fw"></i> &nbsp; LIST ADMIN
-				</h3>
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
-				</p>
+			<div class="full-box page-header" style="width: 98%; height: 10%;">
+				<h6 class="text-left">
+					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Maquina
+				</h6>
+				<div class="container-fluid"  style="width: 100%; height: 10%;">
+				<form  class="form-neon" style="width: 100%; height: 10%;" id="actualizar">
+					<fieldset>
+						<input type="hidden" id="id_equipo" name="id_equipo">
+						<h8><i class="fas fa-box-open"></i> &nbsp; Información de la Maquina</h8>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="descripcion" class="bmd-label-floating">Descripcion</label>
+										<input type="text"  class="form-control" id="descripcion" name="descripcion" maxlength="25" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="ubicacion" class="bmd-label-floating">Ubicación</label>
+										<input type="text" class="form-control" id="ubicacion" name="ubicacion" maxlength="30">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="marca" class="bmd-label-floating">Marca</label>
+										<input type="text" class="form-control" id="marca" name="marca" maxlength="25">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="modelo" class="bmd-label-floating">Modelo</label>
+										<input type="text" class="form-control" id="modelo" name="modelo" maxlength="20">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="ano_fabricacion" class="bmd-label-floating">Año de Fabricación</label>
+										<input type="number" class="form-control" id="ano_fabricacion" name="ano_fabricacion" maxlength="15" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="horas_maquina" class="bmd-label-floating">Horas de Máquina</label>
+										<input type="number" class="form-control" id="horas_maquina" name="horas_maquina" maxlength="15" required>
+									</div>	
+							</div>
+						</div>
+					</fieldset>
+
+					
+					<p class="text-center" style="margin-top: 40px;">
+						<button type="reset" class="btn btn-info"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+						&nbsp; &nbsp;
+						<button type="button" class="btn btn-success" onclick="enviarFormularioUpdateMaquina()"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+					</p>
+				</form>
+			</div>	
 			</div>
-			
+
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs">
 					<li>
-						<a href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; NEW ADMIN</a>
+						<a href="maquinas.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
 					</li>
 					<li>
-						<a class="active" href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; LIST ADMIN</a>
+						<a class="active" href="maquinasList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a>
 					</li>
 				</ul>	
 			</div>
 			
-			<!-- Content -->
+			<!-- Content here-->
 			<div class="container-fluid">
 				<div class="table-responsive">
 					<table class="table table-dark table-sm">
 						<thead>
 							<tr class="text-center roboto-medium">
 								<th>#</th>
-								<th>NAME</th>
-								<th>LAST NAME</th>
-								<th>UPDATE</th>
-								<th>DELETE</th>
+								<th>Descripción</th>
+								<th>Ubicación</th>
+								<th>Marca</th>
+								<th>Modelo</th>
+								<th>Año de Fabricacion</th>
+								<th>Horas de Máquina</th>
+								<th>Actualizar</th>
+								<th>Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="text-center" >
-								<td>1</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>2</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>3</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>4</td>
-								<td>Admin name</td>
-								<td>Admin last name</td>
-								<td>
-									<button type="button" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>
-										
-									</button>
-								</td>
-								<td>
-									<button type="button" class="btn btn-warning">
-	  									<i class="far fa-trash-alt"></i>
-									</button>
-								</td>
-							</tr>
+							<script>listAllEquipos();</script>
 						</tbody>
 					</table>
 				</div>

@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="./css/style.css">
 
 	<!-- Scripts Del Proyecto By rcopriz-->
-	<script src="./js/proyectoMaquinas.js" ></script>
+	<script src="./js/proyectoActividades.js" ></script>
 
 
 </head>
@@ -53,24 +53,27 @@
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="home.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="home.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
-						<!--
-						<li>
+
+						<!-- <li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-tie fa-fw"></i> &nbsp; Administrator <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
-								<li><a href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
+								<li><a href="admin.php"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
+								<li><a href="listadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
+							</ul>
+						</li> -->
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Actividad <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li><a href="Actividad.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Actividad</a></li>
+								<li><a href="ActividadList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividad</a></li>
 							</ul>
 						</li>
-						-->
+
 						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Maquinas <i class="fas fa-chevron-down"></i></a>
-							<ul>
-								<li><a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
-								<li><a href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
-								<li><a href="actividades.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
-							</ul>
+							<a href="base.php"><i class="fas fa-columns fa-fw"></i> &nbsp; Base template</a>
 						</li>
 
 					</ul>
@@ -90,50 +93,68 @@
 			<!-- Page header -->
 			<div class="full-box page-header" style="width: 98%; height: 10%;">
 				<h6 class="text-left">
-					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Maquina
+					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Actividad
 				</h6>
 				<div class="container-fluid"  style="width: 100%; height: 10%;">
-				<form  class="form-neon" style="width: 100%; height: 10%;" id="actualizar">
+				<form  class="form-neon" style="width: 100%; height: 10%;" id="formActualizarActividad">
 					<fieldset>
-						<input type="hidden" id="id_equipo" name="id_equipo">
-						<h8><i class="fas fa-box-open"></i> &nbsp; Información de la Maquina</h8>
+						<input type="hidden" id="id_tarea" name="id_tarea">
+						<h8><i class="fas fa-box-open"></i> &nbsp; Información de la Actividad</h8>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="descripcion" class="bmd-label-floating">Descripcion</label>
-										<input type="text"  class="form-control" id="descripcion" name="descripcion" maxlength="25" required>
+										<label for="equipo" class="bmd-label-floating">Equipo</label>
+										<input type="text"  class="form-control" id="id_equipo" name="id_equipo" maxlength="25" required>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="ubicacion" class="bmd-label-floating">Ubicación</label>
-										<input type="text" class="form-control" id="ubicacion" name="ubicacion" maxlength="30">
+										<label for="tarea" class="bmd-label-floating">Tarea</label>
+										<input type="text" class="form-control" id="tarea" name="tarea" maxlength="30">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
-										<label for="marca" class="bmd-label-floating">Marca</label>
-										<input type="text" class="form-control" id="marca" name="marca" maxlength="25">
+										<label for="intervalo_horas_maquina" class="bmd-label-floating">Intervalo Horas Máquina</label>
+										<input type="text" class="form-control" id="intervalo_horas_maquina" name="intervalo_horas_maquina" maxlength="25">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
-										<label for="modelo" class="bmd-label-floating">Modelo</label>
-										<input type="text" class="form-control" id="modelo" name="modelo" maxlength="20">
+										<label for="fecha_ult_mant" class="bmd-label-floating">Fecha Último Mantenimiento</label>
+										<input type="text" class="form-control" id="fecha_ult_mant" name="fecha_ult_mant" maxlength="20">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
-										<label for="ano_fabricacion" class="bmd-label-floating">Año de Fabricación</label>
-										<input type="number" class="form-control" id="ano_fabricacion" name="ano_fabricacion" maxlength="15" required>
+										<label for="cant_horas" class="bmd-label-floating">Horas de Último Mantenimiento</label>
+										<input type="number" class="form-control" id="cant_horas" name="cant_horas" maxlength="15" required>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="horas_maquina" class="bmd-label-floating">Horas de Máquina</label>
-										<input type="number" class="form-control" id="horas_maquina" name="horas_maquina" maxlength="15" required>
+											<label for="horas_sig_mant" class="bmd-label-floating">Horas del Siguiente Mantenimiento</label>
+										<input type="number" class="form-control" id="horas_sig_mant" name="horas_sig_mant" maxlength="15" required>
 									</div>	
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="fecha_sig_mant" class="bmd-label-floating">Fecha Siguiente Mantenimiento</label>
+										<input type="text" class="form-control" id="fecha_sig_mant" name="fecha_sig_mant" maxlength="15" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="ult_tecnico_asig" class="bmd-label-floating">Último Técnico Asignado</label>
+										<input type="text" class="form-control" id="ult_tecnico_asig" name="ult_tecnico_asig" maxlength="30" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="sig_tecnico_asign" class="bmd-label-floating">Siguiente Técnico Asignado</label>
+										<input type="text" class="form-control" id="sig_tecnico_asign" name="sig_tecnico_asig" maxlength="30" required>
+									</div>
 							</div>
 						</div>
 					</fieldset>
@@ -142,8 +163,11 @@
 					<p class="text-center" style="margin-top: 40px;">
 						<button type="reset" class="btn btn-info"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
 						&nbsp; &nbsp;
-						<button type="button" class="btn btn-success" onclick="enviarFormularioUpdateMaquina()"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+						<button type="button" class="btn btn-success" onclick="enviarFormularioUpdateActividad()"><i class="far fa-save"></i> &nbsp; ACTUALIZAR</button>
+						&nbsp; &nbsp;
+						<button type="button" class="btn btn-success" onclick="enviarFormularioCreateActividad()"><i class="far fa-save"></i> &nbsp; CREAR</button>
 					</p>
+					
 				</form>
 			</div>	
 			</div>
@@ -151,10 +175,10 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs">
 					<li>
-						<a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
+						<a href="Actividad.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
 					</li>
 					<li>
-						<a class="active" href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a>
+						<a class="active" href="ActividadList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividad</a>
 					</li>
 				</ul>	
 			</div>
@@ -162,22 +186,38 @@
 			<!-- Content here-->
 			<div class="container-fluid">
 				<div class="table-responsive">
+					<div class="container-fluid mb-4">
+					<form class="form-inline" id="form-search-equipo">
+						<div class="form-group mr-3">
+							<input type="number" class="form-control" id="inputEquipoId" name="id_equipo" placeholder="ID del Equipo" required>
+						</div>
+						<button type="submit" class="btn btn-primary">
+							<i class="fas fa-search"></i> &nbsp; Buscar
+						</button>
+						<button type="button" class="btn btn-info ml-2" onclick="listAllActividadesByEquipo()">
+							<i class="fas fa-sync-alt"></i> &nbsp; Mostrar Todos
+						</button>
+					</form>
+				</div>
 					<table class="table table-dark table-sm">
 						<thead>
 							<tr class="text-center roboto-medium">
 								<th>#</th>
-								<th>Descripción</th>
-								<th>Ubicación</th>
-								<th>Marca</th>
-								<th>Modelo</th>
-								<th>Año de Fabricacion</th>
-								<th>Horas de Máquina</th>
+								<th>id de la maquina</th>
+								<th>tarea</th>
+								<th>intervalo de horas maquina</th>
+								<th>fecha ultimo mantenimiento</th>
+								<th>cantidad de horas del ultimo mantenimiento</th>
+								<th>horas siguiente mantenimiento</th>
+								<th>fecha siguiente mantenimiento</th>
+								<th>ultimo tecnico asignado</th>
+								<th>siguiente tecnico asignado</th>
 								<th>Actualizar</th>
 								<th>Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
-							<script>listAllEquipos();</script>
+							<script>listAllActividades();</script>
 						</tbody>
 					</table>
 				</div>

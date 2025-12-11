@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $horas_sig_mantenimiento = $data['horas_sig_mant'];
     $ultimo_tecnico = $data['ult_tecnico_asig'];
     $fecha_sig_mantenimiento = $data['fecha_sig_mant'];
+    $siguiente_tecnico = $data['sig_tecnico_asig'];
+
     if (isset($id_tarea, $id_equipo, $tarea, $intervalo_horas_maquina, $fecha_ult_mant, $cant_horas, $horas_sig_mantenimiento, $fecha_sig_mantenimiento)) {
         $actividadesManager = new Actividades();
         $result = $actividadesManager->updateActividad($data);

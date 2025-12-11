@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>List products</title>
+	<title>Nueva Maquina</title>
 
 	<!-- Normalize V8.0.1 -->
 	<link rel="stylesheet" href="./css/normalize.css">
@@ -28,10 +28,9 @@
 	
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
-
+	
 	<!-- Scripts Del Proyecto By rcopriz-->
-	<script src="./js/proyectoActividades.js" ></script>
-
+	<script src="./js/proyectoMaquinas.js" ></script>
 
 </head>
 <body>
@@ -53,26 +52,25 @@
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="home.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="home.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<!--
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-tie fa-fw"></i> &nbsp; Administrator <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="admin.html"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
-								<li><a href="listadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
+								<li><a href="admin.php"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
+								<li><a href="listadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
 							</ul>
 						</li>
 						-->
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Maquinas <i class="fas fa-chevron-down"></i></a>
 							<ul>
-								<li><a href="maquinas.html"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
-								<li><a href="maquinasList.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
-								<li><a href="actividades.html"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
+								<li><a href="maquinas.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
+								<li><a href="maquinasList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
+								<li><a href="actividades.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
 							</ul>
 						</li>
-
 					</ul>
 				</nav>
 			</div>
@@ -87,49 +85,81 @@
 				<a href="#" class="btn-exit-system"><i class="fas fa-power-off"></i></a>
 			</nav>
 
+			<!-- Page header -->
+			<div class="full-box page-header">
+				<h3 class="text-left">
+					<i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina
+				</h3>
+				<p class="text-justify">
+					Creación de nuevas maquinas estacionarias para el inventario de la empresa.
+				</p>
+			</div>
 
-			<div class="full-box page-header" style="width: 98%; height: 10%;">
-				<h6 class="text-left">
-					<i class="fas fa-boxes fa-fw"></i> &nbsp; Actualizar Actividad
-				</h6>
-				<div class="container-fluid"  style="width: 100%; height: 10%;">
-					<p class="text-justify">
-						Reporte de las actividades de mantenimiento programadas para las máquinas. Aquí puedes ver y gestionar las tareas asignadas a cada equipo, incluyendo detalles como el intervalo de horas, fechas de mantenimiento y técnicos asignados.
-					</p>
-			</div>	
-			</div>
 			<div class="container-fluid">
-				<div class="table-responsive">
-					<table class="table table-dark table-sm">
-						<thead>
-							<tr class="text-center roboto-medium">
-								<th># Tarea</th>
-								<th>ID de la maquina</th>
-								<th>Tarea</th>
-								<th>Intervalo de horas maquina</th>
-								<th>Horas Siguiente Mantenimiento</th>
-								<th>Horas Restantes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<script>viewMantenimientosProgramados();</script>
-						</tbody>
-					</table>
-				</div>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled">
-							<a class="page-link" href="#" tabindex="-1">Previous</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
+				<ul class="full-box list-unstyled page-nav-tabs">
+					<li>
+						<a class="active" href="maquinas.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
+					</li>
+					<li>
+						<a href="maquinasList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Listar Maquinas</a>
+					</li>
+				</ul>	
 			</div>
+			
+			<!-- Content here-->
+			<div class="container-fluid">
+				<form  class="form-neon" id="crearMaquina">
+					<fieldset>
+						<legend><i class="fas fa-box-open"></i> &nbsp; Información de la Maquina</legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="descripcion" class="bmd-label-floating">Descripcion</label>
+										<input type="text"  class="form-control" id="descripcion" name="descripcion" maxlength="25" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="ubicacion" class="bmd-label-floating">Ubicación</label>
+										<input type="text" class="form-control" id="ubicacion" name="ubicacion" maxlength="30">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="marca" class="bmd-label-floating">Marca</label>
+										<input type="text" class="form-control" id="marca" name="marca" maxlength="25">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="modelo" class="bmd-label-floating">Modelo</label>
+										<input type="text" class="form-control" id="modelo" name="modelo" maxlength="20">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="ano_fabricacion" class="bmd-label-floating">Año de Fabricación</label>
+										<input type="number" class="form-control" id="ano_fabricacion" name="ano_fabricacion" maxlength="15" required>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="horas_maquina" class="bmd-label-floating">Horas de Máquina</label>
+										<input type="number" class="form-control" id="horas_maquina" name="horas_maquina" maxlength="15" required>
+									</div>	
+							</div>
+						</div>
+					</fieldset>
+
+					
+					<p class="text-center" style="margin-top: 40px;">
+						<button type="reset" class="btn btn-info"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+						&nbsp; &nbsp;
+						<button type="button" class="btn btn-success" onclick="enviarFormularioCreateMaquina()"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+					</p>
+				</form>
+			</div>	
 
 		</section>
 
@@ -144,7 +174,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit sunt perferendis magni expedita possimus quidem, ex, culpa totam, sapiente, laboriosam iste fugit accusamus odio! Impedit beatae eveniet asperiores distinctio sunt?
+						Creación de nuevas maquinas estacionarias para el inventario de la empresa. <br><br>
 					</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-light roboto-condensed-regular" data-dismiss="modal">Close</button>

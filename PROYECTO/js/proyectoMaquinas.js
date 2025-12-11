@@ -19,7 +19,7 @@ async function enviarFormularioUpdateMaquina() {
 //crear una nueva maquina
 async function enviarFormularioCreateMaquina() {
 
-    const form = document.getElementById('actualizar');
+    const form = document.getElementById('crearMaquina');
     const formData = new FormData(form);
 
     let res = await fetch('backend/api/createEquipos.php', {
