@@ -55,25 +55,22 @@
 						<li>
 							<a href="home.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
-
-						<!-- <li>
+						<!--
+						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-tie fa-fw"></i> &nbsp; Administrator <i class="fas fa-chevron-down"></i></a>
 							<ul>
 								<li><a href="admin.php"><i class="fas fa-user-plus fa-fw"></i> &nbsp; New admin</a></li>
 								<li><a href="listadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; List admin</a></li>
 							</ul>
-						</li> -->
-
-						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Actividad <i class="fas fa-chevron-down"></i></a>
-							<ul>
-								<li><a href="Actividad.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Actividad</a></li>
-								<li><a href="ActividadList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividad</a></li>
-							</ul>
 						</li>
-
+						-->
 						<li>
-							<a href="base.php"><i class="fas fa-columns fa-fw"></i> &nbsp; Base template</a>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-box-open fa-fw"></i> &nbsp; Maquinas <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li><a href="maquinas.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a></li>
+								<li><a href="maquinasList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Maquinas</a></li>
+								<li><a href="actividades.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividades Por Maquina</a></li>
+							</ul>
 						</li>
 
 					</ul>
@@ -175,7 +172,7 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs">
 					<li>
-						<a href="Actividad.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
+						<a href="Actividades.php"><i class="fas fa-box fa-fw"></i> &nbsp; Nueva Maquina</a>
 					</li>
 					<li>
 						<a class="active" href="ActividadList.php"><i class="fas fa-boxes fa-fw"></i> &nbsp; Lista de Actividad</a>

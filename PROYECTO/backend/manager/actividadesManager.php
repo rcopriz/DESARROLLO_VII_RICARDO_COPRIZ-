@@ -70,6 +70,7 @@ class Actividades {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
     public function verMantenimientosProgramados() {
     $stmt = $this->pdo->query("SELECT * FROM V_TAREAS_MANTENIMIENTO");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
